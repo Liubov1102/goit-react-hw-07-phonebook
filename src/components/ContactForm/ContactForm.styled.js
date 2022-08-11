@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Field } from 'formik';
+import Notiflix from 'notiflix';
 
 export const Input = styled(Field)`
     border: 1px solid black;
@@ -38,3 +39,15 @@ export const ErrorText = styled.p`
     margin-top: 0px;
     color: red;
 `;
+
+Notiflix.Notify.init({
+    width: '280px',
+    position: 'center-top',
+    fontSize: `16px`,
+    distance: '10px',
+    opacity: 1,
+    timeout: 3000,
+    clickToClose: `true`,
+});
+
+

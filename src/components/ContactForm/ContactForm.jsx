@@ -7,15 +7,6 @@ import { nanoid } from 'nanoid';
 import { Button, Label, Input, ErrorText } from "./ContactForm.styled";
 import Notiflix from 'notiflix';
 
-Notiflix.Notify.init({
-  width: '280px',
-  position: 'center-top',
-  fontSize: `16px`,
-  distance: '10px',
-  opacity: 1,
-  timeout: 3000,
-  clickToClose: `true`,
-});
 
 const validationSchema = Yup.object({
   name: Yup.string().max(16).required('Please, enter name.'),

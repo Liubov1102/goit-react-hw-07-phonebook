@@ -9,7 +9,7 @@ import { Subtitle } from "./components/Subtitle";
 export const App = () => {
 
   return (
-    <Box ml={16} >
+    <Box ml={256} >
       <Title>Phonebook</Title>
       <ContactForm />
 
