@@ -1,14 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { persistStore } from 'redux-persist';
-import contacts from './contactsSlice';
+import filter from './filterSlicer';
+import { contactsApi } from './contactsSlice';
 import { middleware } from './middleware';
 
 export const store = configureStore({
   reducer: {
-    contacts,
+    [contactsApi.reducerPath]: contactsApi.reducer,
+    filter,
   },
 
   middleware,
 });
 
-export const persistor = persistStore(store);
