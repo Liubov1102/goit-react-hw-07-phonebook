@@ -10,6 +10,7 @@ export const Input = styled(Field)`
     border-radius: 4px;
     width: 360px;
     outline: 0;
+    
 `;
 
 export const Label = styled.label`

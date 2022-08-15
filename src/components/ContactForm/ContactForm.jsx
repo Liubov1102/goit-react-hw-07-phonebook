@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {  useAddContactMutation, useGetContactsQuery } from 'redux/contactsSlice';
 import { Formik, Form, ErrorMessage  } from 'formik';
 import * as Yup from 'yup';
@@ -20,6 +20,7 @@ const FormError = ({ name }) => {
 };
   
 export const ContactForm = () => {
+  
   const [addContact] = useAddContactMutation();
   const { data: contacts } = useGetContactsQuery();
  
@@ -32,7 +33,7 @@ export const ContactForm = () => {
       return resetForm('');
     }
     
-    await addContact({ name: name, phone: phone });
+    await addContact({ name, phone });
     resetForm();
   };
 
@@ -44,15 +45,18 @@ export const ContactForm = () => {
       }}
       validationSchema={validationSchema}
       onSubmit={handleSubmit}>
+      
       <Form  >
-        <Label htmlFor='inputName'>Name</Label>
+        <Label htmlFor='name'>Name</Label>
         <Input
+          id="name"
           type="text"
           name="name"
         />
         <FormError name="name" />
-        <Label htmlFor='inputTel'>Number</Label>
+        <Label htmlFor='phone'>Number</Label>
         <Input
+          id="phone"
           type="phone"
           name="phone"
         />
